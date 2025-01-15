@@ -8,9 +8,13 @@ import pandas as pd
 import re
 import os
 from dotenv import load_dotenv
-import streamlit as st
 
-GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Access the GROQ API key
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 # Set your Groq API key
 client = Groq(api_key=GROQ_API_KEY)
